@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "day1/sonar-dept-window.go"
+            "program": "day3/life-support-rating.go"
         }
     ]
 }
