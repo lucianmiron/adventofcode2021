@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "day3/life-support-rating.go"
+            "program": "day5/hydrotermal-vents.go"
         }
     ]
 }
