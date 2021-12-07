@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "day6/lanternfish256.go"
+            "program": "day7/crab-attack.go"
         }
     ]
 }
