@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func main1() {
 	const MaxInt = int(^uint(0) >> 1)
 	file, err := os.Open("C:\\Users\\miron\\Desktop\\AdventOfCode\\day1\\input.txt")
 	if err != nil {

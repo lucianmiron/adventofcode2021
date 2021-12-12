@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "day8/7-segment.go"
+            "program": "day10/syntax.go"
         }
     ]
 }

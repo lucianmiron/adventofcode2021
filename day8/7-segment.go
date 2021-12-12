@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func main() {
+func main1() {
 	var uniqueNumbers [10]string = [10]string{"abcefg", "cf", "acdeg", "acdfg", "bcdf", "abdfg", "abdefg", "acf", "abcdefg", "abcdfg"}
 	file, err := os.Open("C:\\Users\\miron\\Desktop\\AdventOfCode\\day8\\input.txt")
 	if err != nil {
