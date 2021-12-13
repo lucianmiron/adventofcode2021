@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "day10/syntax.go"
+            "program": "day13/fold.go"
         }
     ]
 }
