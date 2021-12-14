@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "day13/fold.go"
+            "program": "day14/polymer.go"
         }
     ]
 }
