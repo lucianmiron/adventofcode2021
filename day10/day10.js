@@ -7,7 +7,8 @@ var acoladeError = 1197;
 var greaterError = 25137;
 var main = function () {
     var input = (0, fs_1.readFileSync)('input.txt', 'utf-8');
-    var errors = input.split('\r\n').map(function (row) {
+    let autocompletionScores = [];
+    var errors = input.split('\r\n').map(function (row, index) {
         var openingProcessed = [];
         for (var i = 0; i < row.length; i++) {
             if (row.charAt(i).match(/\)|]|}|>/)) {
@@ -49,14 +50,53 @@ var main = function () {
                         openingProcessed.push(i);
                         break;
                     }
-
                 }
+            }
+        }
+        autocompletionScores[autocompletionScores.length] = 0;
+        for (var i = row.length - 1; i >= 0; i--) {
+            if (!openingProcessed.includes(i)) {
+                //it's an opening which needs to be closed
+                let symbolScore = 0;
+                switch (row.charAt(i)) {
+                    case "(":
+                        symbolScore = 1;
+                        break;
+                    case "[":
+                        symbolScore = 2;
+                        break;
+                    case "{":
+                        symbolScore = 3;
+                        break;
+                    case "<":
+                        symbolScore = 4;
+                        break;
+                }
+                autocompletionScores[autocompletionScores.length - 1] = autocompletionScores[autocompletionScores.length - 1] * 5 + symbolScore;
             }
         }
         return 0;
     });
-    var sum = errors.reduce(function (previous, current) { return previous + current; }, 0);
-    console.log(sum);
+    //var sum = errors.reduce(function (previous, current) { return previous + current; }, 0);
+    insertionSort(autocompletionScores, autocompletionScores.length);
+
+    console.log(autocompletionScores[(autocompletionScores.length - 1) / 2]);
+};
+var insertionSort = function (arr, n) {
+    var i, key, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
+        /* Move elements of arr[0..i-1], that are
+        greater than the key,to one position ahead
+        of their current position
+        */
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
 };
 var getErrorFromChar = function (character) {
     if (character == ')')
